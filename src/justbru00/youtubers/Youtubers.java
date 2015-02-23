@@ -22,6 +22,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Youtubers extends JavaPlugin implements Listener {
 
 	public final Logger logger = Logger.getLogger("Minecraft");
+	
+	// Youtubers plugin for EpicRealm
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
