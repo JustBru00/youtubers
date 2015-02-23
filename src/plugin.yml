@@ -1,0 +1,10 @@
+name: Youtubers
+main: justbru00.youtubers.Youtubers
+version: 1.0
+description: Shows youtubers.
+
+
+commands:
+ youtubers:
+       description: Shows youtubers.       
+  
