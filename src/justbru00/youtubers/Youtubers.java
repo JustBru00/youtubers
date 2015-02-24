@@ -34,6 +34,11 @@ public class Youtubers extends JavaPlugin implements Listener {
 			+ ChatColor.BLUE
 			+ "\nhttps://www.youtube.com/channel/UCP19TT7v3DF8kbKbMr2bkTA";
 	
+	public String msgFireShadow196 = ChatColor.WHITE
+			+ "FireShadow196\nClick Link below for his youtube channel:"
+			+ ChatColor.BLUE
+			+ "\nhttps://www.youtube.com/user/FireShadow196";
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
 			String commandLabel, String[] args) {
@@ -84,9 +89,20 @@ public class Youtubers extends JavaPlugin implements Listener {
 		JustBru00sm.setOwner("JustBru00");
 		JustBru00.setItemMeta(JustBru00sm);
 		// -----------------------------------------------------------------------
+		// FireShadow196
+		// -----------------------------------------------------------------------
+		ItemStack FireShadow196 = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
+		SkullMeta smFireShadow196 = (SkullMeta) FireShadow196.getItemMeta();
+		String nameFireShadow196 = ChatColor.BLUE + "FireShadow196"
+				+ ChatColor.GOLD + " Click for info.";
+		smFireShadow196.setDisplayName(nameFireShadow196);
+		smFireShadow196.setOwner("FireShadow196");
+		FireShadow196.setItemMeta(smFireShadow196);		
+		// -----------------------------------------------------------------------
 		// Set Slots
 		// -------------------------------------------------------------
 		inv.setItem(0, JustBru00);
+		inv.setItem(1, FireShadow196);
 		inv.setItem(17, closebutton);
 
 		// -----------------------------------------------------------------------
@@ -117,6 +133,10 @@ public class Youtubers extends JavaPlugin implements Listener {
 
 					p.closeInventory();
 					p.sendMessage(msgJustBru00);
+				}
+				if (e.getSlot() == 1) {
+					p.closeInventory();
+					p.sendMessage(msgFireShadow196);
 				}
 			} else if (e.getCurrentItem().getType() == Material.BARRIER) {
 
