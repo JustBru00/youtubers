@@ -5,6 +5,8 @@ import java.util.logging.Logger;
 
 
 
+
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -27,6 +29,11 @@ public class Youtubers extends JavaPlugin implements Listener {
 	
 	// Youtubers plugin for EpicRealm
 
+	public String msgJustBru00 = ChatColor.WHITE
+			+ "JustBru00 Owner of server.\nClick Link below for his youtube channel:"
+			+ ChatColor.BLUE
+			+ "\nhttps://www.youtube.com/channel/UCP19TT7v3DF8kbKbMr2bkTA";
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
 			String commandLabel, String[] args) {
@@ -71,8 +78,9 @@ public class Youtubers extends JavaPlugin implements Listener {
 		// -------------------------------------------------------------
 		ItemStack JustBru00 = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
 		SkullMeta JustBru00sm = (SkullMeta) JustBru00.getItemMeta();
-		JustBru00sm.setDisplayName(ChatColor.BLUE + "JustBru00"
-				+ ChatColor.GOLD + " Click for info.");
+		String nameJustBru00 = ChatColor.BLUE + "JustBru00"
+				+ ChatColor.GOLD + " Click for info.";
+		JustBru00sm.setDisplayName(nameJustBru00);
 		JustBru00sm.setOwner("JustBru00");
 		JustBru00.setItemMeta(JustBru00sm);
 		// -----------------------------------------------------------------------
@@ -91,6 +99,10 @@ public class Youtubers extends JavaPlugin implements Listener {
 	public void InventoryClick(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
 
+		@SuppressWarnings("unused")
+		String nameJustBru002 = ChatColor.BLUE + "JustBru00"
+				+ ChatColor.GOLD + " Click for info.";
+		
 		if (e.getInventory()
 				.getTitle()
 				.contains(
@@ -99,16 +111,12 @@ public class Youtubers extends JavaPlugin implements Listener {
 
 			if (e.getCurrentItem() == null) {
 				return;
-			}
-			if (e.getCurrentItem().getType() == Material.SKULL_ITEM) {
-				if (e.getCurrentItem().getItemMeta().getDisplayName() == ChatColor.BLUE
-						+ "JustBru00" + ChatColor.GOLD + " Click for info.") {
+			}			
+			if (e.getCurrentItem().getType() == Material.SKULL_ITEM) {	
+				if (e.getSlot() == 0){
 
 					p.closeInventory();
-					p.sendMessage(ChatColor.WHITE
-							+ "JustBru00 Owner of server.\nClick Link below for his youtube channel:"
-							+ ChatColor.BLUE
-							+ "\nhttps://www.youtube.com/channel/UCP19TT7v3DF8kbKbMr2bkTA");
+					p.sendMessage(msgJustBru00);
 				}
 			} else if (e.getCurrentItem().getType() == Material.BARRIER) {
 
