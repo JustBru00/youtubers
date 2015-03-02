@@ -38,6 +38,10 @@ public class Youtubers extends JavaPlugin implements Listener {
 			+ "FireShadow196\nClick Link below for his youtube channel:"
 			+ ChatColor.BLUE
 			+ "\nhttps://www.youtube.com/user/FireShadow196";
+	public String msggavin12787 = ChatColor.WHITE
+			+ "gavin12787\nClick Link below for his youtube channel:"
+			+ ChatColor.BLUE
+			+ "\nnull";
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
@@ -46,7 +50,6 @@ public class Youtubers extends JavaPlugin implements Listener {
 		Player player = (Player) sender;
 		if (commandLabel.equalsIgnoreCase("youtubers")) {
 			openGUI(player);
-
 		}
 		return false;
 	}
