@@ -70,6 +70,15 @@ public class Youtubers extends JavaPlugin implements Listener {
 	}
 
 	public Inventory inv;
+	
+	public ItemStack skullCreate(String owner, String displayName){
+		ItemStack is = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
+		SkullMeta sm = (SkullMeta) is.getItemMeta();
+		sm.setDisplayName(ChatColor.translateAlternateColorCodes('&', displayName));
+		sm.setOwner(owner);
+		is.setItemMeta(sm);		
+		return is;		
+	}
 
 	public void openGUI(Player p) {
 		inv = Bukkit.createInventory(null, 18, ChatColor.DARK_RED + "You"
