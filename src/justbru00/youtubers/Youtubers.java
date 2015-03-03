@@ -97,6 +97,7 @@ public class Youtubers extends JavaPlugin implements Listener {
 		inv.setItem(0, skullCreate("JustBru00", ChatColor.BLUE + "JustBru00" + ChatColor.GOLD + " Click for info."));
 		inv.setItem(1, skullCreate("FireShadow196", ChatColor.BLUE + "FireShadow196" + ChatColor.GOLD + " Click for info."));		
 		inv.setItem(2, skullCreate("gavin12787", ChatColor.BLUE + "gavin12787 &6Click for info."));
+		inv.setItem(16,	skullCreate(p.getName(), "&b" + p.getName() + " &6You Could be a youtuber."));
 		inv.setItem(17, closebutton);
 		
 
