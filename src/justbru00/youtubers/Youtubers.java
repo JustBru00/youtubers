@@ -71,6 +71,7 @@ public class Youtubers extends JavaPlugin implements Listener {
 
 	public Inventory inv;
 	
+	// Skull Maker
 	public ItemStack skullCreate(String owner, String displayName){
 		ItemStack is = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
 		SkullMeta sm = (SkullMeta) is.getItemMeta();
@@ -85,37 +86,19 @@ public class Youtubers extends JavaPlugin implements Listener {
 				+ ChatColor.WHITE + "Tubers");
 
 		// Close Button
-		// ----------------------------------------------------------
+		// -------------------------------------------------------------
 		ItemStack closebutton = new ItemStack(Material.BARRIER);
 		ItemMeta closebuttonim = closebutton.getItemMeta();
 		closebuttonim.setDisplayName(ChatColor.DARK_RED + "Close GUI");
 		closebutton.setItemMeta(closebuttonim);
-		// -----------------------------------------------------------------------
-		// JustBru00
-		// -------------------------------------------------------------
-		ItemStack JustBru00 = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
-		SkullMeta JustBru00sm = (SkullMeta) JustBru00.getItemMeta();
-		String nameJustBru00 = ChatColor.BLUE + "JustBru00"
-				+ ChatColor.GOLD + " Click for info.";
-		JustBru00sm.setDisplayName(nameJustBru00);
-		JustBru00sm.setOwner("JustBru00");
-		JustBru00.setItemMeta(JustBru00sm);
-		// -----------------------------------------------------------------------
-		// FireShadow196
-		// -----------------------------------------------------------------------
-		ItemStack FireShadow196 = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
-		SkullMeta smFireShadow196 = (SkullMeta) FireShadow196.getItemMeta();
-		String nameFireShadow196 = ChatColor.BLUE + "FireShadow196"
-				+ ChatColor.GOLD + " Click for info.";
-		smFireShadow196.setDisplayName(nameFireShadow196);
-		smFireShadow196.setOwner("FireShadow196");
-		FireShadow196.setItemMeta(smFireShadow196);		
-		// -----------------------------------------------------------------------
+		// -------------------------------------------------------------	
 		// Set Slots
 		// -------------------------------------------------------------
-		inv.setItem(0, JustBru00);
-		inv.setItem(1, FireShadow196);
+		inv.setItem(0, skullCreate("JustBru00", ChatColor.BLUE + "JustBru00" + ChatColor.GOLD + " Click for info."));
+		inv.setItem(1, skullCreate("FireShadow196", ChatColor.BLUE + "FireShadow196" + ChatColor.GOLD + " Click for info."));		
+		inv.setItem(2, skullCreate("gavin12787", ChatColor.BLUE + "gavin12787 &6Click for info."));
 		inv.setItem(17, closebutton);
+		
 
 		// -----------------------------------------------------------------------
 
@@ -126,10 +109,6 @@ public class Youtubers extends JavaPlugin implements Listener {
 	@EventHandler
 	public void InventoryClick(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
-
-		@SuppressWarnings("unused")
-		String nameJustBru002 = ChatColor.BLUE + "JustBru00"
-				+ ChatColor.GOLD + " Click for info.";
 		
 		if (e.getInventory()
 				.getTitle()
@@ -149,6 +128,10 @@ public class Youtubers extends JavaPlugin implements Listener {
 				if (e.getSlot() == 1) {
 					p.closeInventory();
 					p.sendMessage(msgFireShadow196);
+				}
+				if (e.getSlot() == 2) {
+					p.closeInventory();
+					p.sendMessage(msggavin12787);
 				}
 			} else if (e.getCurrentItem().getType() == Material.BARRIER) {
 
