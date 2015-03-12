@@ -42,6 +42,14 @@ public class Youtubers extends JavaPlugin implements Listener {
 			+ "gavin12787\nClick Link below for his youtube channel:"
 			+ ChatColor.BLUE
 			+ "\nnull";
+	public String msgBlackright709 = ChatColor.WHITE
+			+ "Blackright709\nClick Link below for his youtube channel:"
+			+ ChatColor.BLUE
+			+ "\nhttps://www.youtube.com/channel/UC9Z8r8ZNP0Qn5gBFBGuH6xQ";
+	public String msgSalvadory = ChatColor.WHITE
+			+ "Salvadory\nClick Link below for his youtube channel:"
+			+ ChatColor.BLUE
+			+ "\nhttps://www.youtube.com/channel/UC9Z8r8ZNP0Qn5gBFBGuH6xQ";
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
@@ -94,10 +102,11 @@ public class Youtubers extends JavaPlugin implements Listener {
 		// -------------------------------------------------------------	
 		// Set Slots
 		// -------------------------------------------------------------
-		inv.setItem(0, skullCreate("JustBru00", ChatColor.BLUE + "JustBru00" + ChatColor.GOLD + " Click for info."));
+		inv.setItem(0, skullCreate("JustBru00", ChatColor.BLUE + "&lJustBru00" + ChatColor.GOLD + " Click for info."));
 		inv.setItem(1, skullCreate("FireShadow196", ChatColor.BLUE + "FireShadow196" + ChatColor.GOLD + " Click for info."));		
-		inv.setItem(2, skullCreate("gavin12787", ChatColor.BLUE + "gavin12787 &6Click for info."));
-		inv.setItem(16,	skullCreate(p.getName(), "&b" + p.getName() + " &6You Could be a youtuber."));
+		inv.setItem(2, skullCreate("gavin12787", ChatColor.BLUE + "gavin12787 &6Click for info."));		
+		inv.setItem(3, skullCreate("Blackright709", ChatColor.BLUE + "Blackright709 &6Click for info."));
+		inv.setItem(4, skullCreate("Salvadory", ChatColor.BLUE + "Salvadory &6Click for info."));
 		inv.setItem(17, closebutton);
 		
 
@@ -133,6 +142,14 @@ public class Youtubers extends JavaPlugin implements Listener {
 				if (e.getSlot() == 2) {
 					p.closeInventory();
 					p.sendMessage(msggavin12787);
+				}
+				if (e.getSlot() == 3){
+					p.closeInventory();
+					p.sendMessage(msgBlackright709);
+				}
+				if (e.getSlot() == 4){
+					p.closeInventory();
+					p.sendMessage(msgSalvadory);
 				}
 			} else if (e.getCurrentItem().getType() == Material.BARRIER) {
 
